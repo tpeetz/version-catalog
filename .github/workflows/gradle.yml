@@ -1,0 +1,27 @@
+name: Build Version Catalog
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main", "feature/*", "develop/*" ]
+  pull_request:
+    branches: [ "main", "develop/*" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  gradle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 11
+      - name: Gradle Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: publish -PGitHubPackagesUsername=${{ env.GITHUBPACKAGESUSERNAME }} -PGitHubPackagesPassword=${{ secrets.GITHUBPACKAGESPASSWORD }}
