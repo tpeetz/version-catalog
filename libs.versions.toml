@@ -10,6 +10,7 @@ logback = "1.1.2"
 rouge = "3.15.0"
 diagram = "2.2.2"
 asciidoctor = "3.3.2"
+conventionPlugins = "1.0.0-SNAPSHOT"
 
 [libraries]
 rouge = { module = "rubygems:rouge", version.ref = "rouge" }
@@ -32,3 +33,6 @@ sonarqube = { id = "org.sonarqube", version = "3.3" }
 asciidoctorPdf = { id = "org.asciidoctor.jvm.pdf", version.ref = "asciidoctor" }
 asciidoctorConvert = { id = "org.asciidoctor.jvm.convert", version.ref = "asciidoctor" }
 asciidoctorGems = { id = "org.asciidoctor.jvm.gems", version.ref = "asciidoctor" }
+javaConvention = { id = "de.tpeetz.java-conventions", version.ref = "conventionPlugins" }
+libraryConvention = { id = "de.tpeetz.library-conventions", version.ref = "conventionPlugins" }
+asciidoctorConvention = { id = "de.tpeetz.asciidoctor-conventions", version.ref = "conventionPlugins" }
