@@ -29,7 +29,7 @@ dependencyResolutionManagement {
     }
 
     versionCatalogs {
-        create("versions") {
+        create("versionsLibs") {
             from("de.tpeetz:version-catalog:1.0.0-SNAPSHOT")
         }
     }
