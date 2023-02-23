@@ -15,6 +15,11 @@ publishing {
             url = "https://maven.pkg.github.com/tpeetz/version-catalog"
             credentials(PasswordCredentials)
         }
+        maven {
+            name = "GiteaPackages"
+            url = "https://gitea.thpeetz.de/api/packages/tpeetz/maven"
+            credentials(PasswordCredentials)
+        }
     }
 }
 
