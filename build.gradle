@@ -18,7 +18,10 @@ publishing {
         maven {
             name = "GiteaPackages"
             url = "https://gitea.thpeetz.de/api/packages/tpeetz/maven"
-            credentials(PasswordCredentials)
+            credentials(HttpHeaderCredentials)
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
         }
     }
 }

@@ -24,4 +24,4 @@ jobs:
       - name: Gradle Build
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: publish -PGitHubPackagesUsername=${{ env.GITHUBPACKAGESUSERNAME }} -PGitHubPackagesPassword=${{ secrets.GITHUBPACKAGESPASSWORD }} -PGiteaPackagesUsername=${{ env.GITEAPACKAGESUSERNAME }} -PGiteaPackagesPassword=${{ secrets.GITEAPACKAGESPASSWORD }}
+          arguments: publish -PGitHubPackagesUsername=${{ env.GITHUBPACKAGESUSERNAME }} -PGitHubPackagesPassword=${{ secrets.GITHUBPACKAGESPASSWORD }} -PGiteaPackagesAuthHeaderName=${{ env.GITEAPACKAGESAUTHHEADERNAME }} -PGiteaPackagesAuthHeaderValue=${{ secrets.GITEAPACKAGESAUTHHEADERVALUE }}
