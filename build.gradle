@@ -1,0 +1,30 @@
+plugins {
+    id 'version-catalog'
+    id 'maven-publish'
+}
+
+publishing {
+    publications {
+        catalog(MavenPublication) {
+            from components.versionCatalog
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/tpeetz/version-catalog"
+            credentials(PasswordCredentials)
+        }
+        maven {
+            name = "GiteaPackages"
+            url = "https://gitea.thpeetz.de/api/packages/tpeetz/maven"
+            credentials(PasswordCredentials)
+        }
+    }
+}
+
+catalog {
+    versionCatalog {
+        from(files("libs.versions.toml"))
+    }
+}
